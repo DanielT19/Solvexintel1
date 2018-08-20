@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('bienvenido');
 });
+Route::get('/encuesta', function(){
+	return view('encuesta');
+});
