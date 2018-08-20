@@ -34,7 +34,7 @@
   </div>
 </nav>
 <div class="row">
-	<div class="col-md-4 col-md-offset-4">
+	<div class="col-md-9 col-md-offset-1">
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<h1 class="panel-title">Acceso al Test</h1>
