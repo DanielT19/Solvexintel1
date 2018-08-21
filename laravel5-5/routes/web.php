@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('bienvenido');
-});
-Route::get('/encuesta', function(){
-	return view('encuesta');
-});
-//Route::post('','EncuestaController@store');
+Route::get('/', 'EncuestaController@home');
+Route::post('/encuesta', 'EncuestaController@index');
+
+Route::resource('encuesta','EncuestaController@index');
+Route::resource('encuesta','EncuestaController@resultados');

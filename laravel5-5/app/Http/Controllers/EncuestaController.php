@@ -12,9 +12,19 @@ class EncuestaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function home()
+    {
+        return view('bienvenido');
+    }
+
     public function index()
     {
-        //
+        return view('encuesta');
+    }
+
+    public function resultados()
+    {
+        return view('resultados');
     }
 
     /**

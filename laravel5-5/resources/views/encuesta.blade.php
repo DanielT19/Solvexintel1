@@ -10,9 +10,28 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="">
 					{{ csrf_field()}}
+					<input type="text" name="pA" value="A" hidden>
+					<input type="text" name="pB" value="B" hidden>
+					<input type="text" name="pC" value="C" hidden>
+					<input type="text" name="pD" value="D" hidden>
+					<input type="text" name="pE" value="E" hidden>
+					<input type="text" name="pF" value="F" hidden>
+					<input type="text" name="pG" value="G" hidden>
+					<input type="text" name="pH" value="H" hidden>
+					<input type="text" name="pI" value="I" hidden>
+					<input type="text" name="pJ" value="J" hidden>
+					<input type="text" name="pK" value="K" hidden>
+					<input type="text" name="pL" value="L" hidden>
+					<input type="text" name="pM" value="M" hidden>
+					<input type="text" name="pN" value="N" hidden>
+					<input type="text" name="pO" value="O" hidden>
+					<input type="text" name="pP" value="P" hidden>
+					<input type="text" name="pQ" value="Q" hidden>
+					<input type="text" name="pR" value="R" hidden>
 					<div class="form-row">
 						<table class="table table-striped">
-							<p><b>A.	Cuando se presenta un conflicto entre personas acerca de ideas. Tiendo a estar a favor de la parte que</b></p>
+							<p><b>A. Cuando se presenta un conflicto entre personas acerca de ideas. Tiendo a estar a favor de la parte que</b></p>
+							
 							<thead>
 								<th></th>
 								<th></th>
@@ -26,6 +45,7 @@
 								<td><input class="form-control" 
 									type="number" 
 									name="1a"
+									id="1a"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -837,7 +857,7 @@
 								<td>Filósofos y estadistas.</td>
 								<td><input class="form-control" 
 									type="number" 
-									name="1j"
+									name="1m"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -848,7 +868,7 @@
 									<td>Escritores y maestros.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="2j"
+											name="2m"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -859,7 +879,7 @@
 									<td>Líderes empresariales y gubernamentales.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="3j"
+											name="3m"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -870,7 +890,7 @@
 									<td>Economistas e ingenieros.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="4j"
+											name="4m"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -881,7 +901,7 @@
 									<td>Granjeros y periodistas.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="5j"
+											name="5m"
 											required
 											pattern="^[0-9]+"
 											min="1"
