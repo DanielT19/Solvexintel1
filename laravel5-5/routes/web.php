@@ -17,3 +17,4 @@ Route::get('/', function () {
 Route::get('/encuesta', function(){
 	return view('encuesta');
 });
+//Route::post('','EncuestaController@store');

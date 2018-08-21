@@ -17,6 +17,7 @@ class CreateUsuarioTable extends Migration
             $table->increments('id_usu');
             $table->string('nombre');
             $table->string('email');
+            $table->string('id_enc');
             $table->timestamps();
         });
     }
