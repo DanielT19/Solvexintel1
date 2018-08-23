@@ -37,8 +37,8 @@ class EncuestaController extends Controller
       public function storeuser(Request $request)
     {
         request()->validate([
-            'nombre' => 'required',
-            'email' => 'required'
+            'nombre' => 'required|min:2',
+            'email' => 'required|email'
         ]);
         $usuario = new Usuario;
         $usuario->nombre = $request->get('nombre');
@@ -47,7 +47,7 @@ class EncuestaController extends Controller
         $existe = Usuario::where('email',$email)->exists();
         if($existe==$usuario->email)
         {
-            return view('bienvenido')->withErrors(['¡Oops, el correo ya fue registrado','Si ya habias completado la encuesta una vez, no es necesarios hacerlo de nuevo']);
+            return view('bienvenido')->with('usuario','$usuario')->withErrors(['¡Oops, el correo ya fue registrado','Si ya habias completado la encuesta una vez, no es necesarios hacerlo de nuevo']);
         }
         else
         {
@@ -55,20 +55,6 @@ class EncuestaController extends Controller
             return view('encuesta');
         }
         
-      /*  if()
-        {
-            return "error";
-        }
-        else
-        {
-             $usuario->save();
-        return $request;
-        }*/
-       
-       /*$encuestauser = new Usuario;
-       $encuestauser->nombre = $request->get('nombre');
-       $encuestauser->email = $request->get('email');
-       $encuestauser->save();*/
     }
 
 
