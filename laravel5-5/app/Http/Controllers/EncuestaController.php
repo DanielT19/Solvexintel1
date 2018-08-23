@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Encuesta;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Usuario;
 
 class EncuestaController extends Controller
 {
@@ -32,6 +34,44 @@ class EncuestaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+      public function storeuser(Request $request)
+    {
+        request()->validate([
+            'nombre' => 'required',
+            'email' => 'required'
+        ]);
+        $usuario = new Usuario;
+        $usuario->nombre = $request->get('nombre');
+        $usuario->email = $request->get('email');
+        $email=$usuario->email;
+        $existe = Usuario::where('email',$email)->exists();
+        if($existe==$usuario->email)
+        {
+            return view('bienvenido')->withErrors(['¡Oops, el correo ya fue registrado','Si ya habias completado la encuesta una vez, no es necesarios hacerlo de nuevo']);
+        }
+        else
+        {
+            $usuario->save();
+            return view('encuesta');
+        }
+        
+      /*  if()
+        {
+            return "error";
+        }
+        else
+        {
+             $usuario->save();
+        return $request;
+        }*/
+       
+       /*$encuestauser = new Usuario;
+       $encuestauser->nombre = $request->get('nombre');
+       $encuestauser->email = $request->get('email');
+       $encuestauser->save();*/
+    }
+
+
     public function create()
     {
         //
@@ -45,7 +85,7 @@ class EncuestaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

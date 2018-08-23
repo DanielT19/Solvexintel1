@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'EncuestaController@home');
-Route::post('/encuesta', 'EncuestaController@index');
+Route::post('/', 'EncuestaController@storeuser');
 
 Route::resource('encuesta','EncuestaController@index');
 Route::resource('encuesta','EncuestaController@resultados');
