@@ -2,28 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Encuesta;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Usuario;
+use App\Encuesta;
+use Illuminate\Support\Facades\DB;
 
-class EncuestaController extends Controller
+class UsuariosController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response 
      */
-   
-
     public function index()
     {
-        return view('encuesta');
-    }
-
-    public function resultados()
-    {
-        return view('resultados');
+        return view('bienvenido');
     }
 
     /**
@@ -31,9 +24,20 @@ class EncuestaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-      public function storeuser(Request $request)
+    public function create()
     {
-        request()->validate([
+        
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+         request()->validate([
             'nombre' => 'required|min:2',
             'email' => 'required|email'
         ]);
@@ -50,46 +54,29 @@ class EncuestaController extends Controller
         else
         {
             $usuario->save();
-            return view('encuesta');
+            return view('encuesta')->with('message','store');
         }
-        
-    }
-
-
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Encuesta  $encuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Encuesta $encuesta)
+    public function show(Request $request)
     {
-        //
+        $usuario = Usuario::paginate(10);
+        return view('usuarios.resultado',['usuario' => $usuario]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Encuesta  $encuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Encuesta $encuesta)
+    public function edit($id)
     {
         //
     }
@@ -98,10 +85,10 @@ class EncuestaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Encuesta  $encuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Encuesta $encuesta)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -109,10 +96,10 @@ class EncuestaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Encuesta  $encuesta
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Encuesta $encuesta)
+    public function destroy($id)
     {
         //
     }

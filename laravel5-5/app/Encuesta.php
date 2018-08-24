@@ -13,5 +13,5 @@ class Encuesta extends Model
 		'id_usu',
 		
 	];
-    return $this->belongsTo('App\Usuario');
+    return $this->belongsTo('App\Usuario', 'id_usu');
 }

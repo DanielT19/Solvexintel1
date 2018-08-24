@@ -5,6 +5,14 @@
 				{{Session::get('success')}}
 			</div>
 			@endif
+			<?php $message=Session::get('message') ?>
+			@if ($message=='store')
+    <div class="alert alert-warning	">
+        <ul>
+            Bienvenido, Recuerda que no debes repetir los numeros en Cada una de las preguntas.
+        </ul>
+    </div><br />
+@endif
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-info">

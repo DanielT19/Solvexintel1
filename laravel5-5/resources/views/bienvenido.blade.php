@@ -21,21 +21,20 @@
 				<div class="container">
 						
 					<nav class=" navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
-						<a class="navbar-brand" href="{{URL::action('EncuestaController@home')}}">
+						<a class="navbar-brand" href="">
 							<img src="/images/ic_svl_iconapp.png" width="30" height="30" alt="">
 						</a>Solvexintel
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="{{URL::action('EncuestaController@home')}}">Inicio<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{URL::action('UsuariosController@index')}}">Inicio<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Acciones
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Resultados</a>
-          <a class="dropdown-item" href="#">Ver Preguntas</a>          
+          <a class="dropdown-item" href="{{URL::action('UsuariosController@show') }}">Resultados</a>         
         </div>
       </li>
       <li class="nav-item">
@@ -52,8 +51,14 @@
 			<div class="panel-heading">
 				<h1 class="panel-title">Acceso al Test</h1>
 			</div>
-			<div class="panel-body">
-				<form method="POST" action="{{URL::action('EncuestaController@storeuser') }}">
+			<div class="panel-body"><!--
+				{!! Form::open() !!}
+				<div class="form-group">
+					{!! Form::label('Nombre:') !!}
+					{!! Form::text('nombre',null,['class'=>'form-control','placeholder'=>'Ingresa tu Nombre Completo']) !!}
+				</div>
+				{!! Form::close() !!}-->
+				<form method="POST" action="{{URL::action('UsuariosController@store') }}">
 					<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<div class="form-group">
 						<label form="nombre">Nombre: </label>

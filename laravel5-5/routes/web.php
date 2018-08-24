@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'EncuestaController@home');
-Route::post('/', 'EncuestaController@storeuser');
+Route::get('/', 'UsuariosController@index');
+Route::post('/', 'UsuariosController@store');
+Route::get('/resultado','UsuariosController@show');
 
 Route::resource('encuesta','EncuestaController@index');
 Route::resource('encuesta','EncuestaController@resultados');
