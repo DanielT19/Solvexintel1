@@ -54,7 +54,9 @@ class UsuariosController extends Controller
         else
         {
             $usuario->save();
-            return view('encuesta')->with('message','store');
+            $usuario = Usuario::all();
+            
+            return view('encuesta');
         }
     }
 
