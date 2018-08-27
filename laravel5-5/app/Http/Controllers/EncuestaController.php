@@ -50,7 +50,9 @@ class EncuestaController extends Controller
         else
         {
             $usuario->save();
-            return view('encuesta');
+            $id = DB::table('usuario')->lastInsertId(
+            [ 'nombre' => 'first' ]);
+            return view('encuesta',['id'=>$id]);
         }
         
     }
@@ -69,7 +71,10 @@ class EncuestaController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $encuesta = new Encuesta;
+
+        $encuesta->pregunta = $request->get('pA');
+        $encuesta->respuesta = $request->get('1a');
     }
 
     /**

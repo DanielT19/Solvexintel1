@@ -13,5 +13,10 @@ class Encuesta extends Model
 		'id_usu',
 		
 	];
-    return $this->belongsTo('App\Usuario', 'id_usu');
+	public function usuarios()
+	{
+
+    return $this->hasMany('App\Usuario');
+    
+	}
 }
