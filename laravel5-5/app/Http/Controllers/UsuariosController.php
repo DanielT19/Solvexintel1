@@ -24,23 +24,7 @@ class UsuariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function saveenc(Request $request)
-    {
-        //$encuesta = new Encuesta;
-        foreach($request->all() as $req){
-        $encuesta = new Encuesta;
-        $encuesta->id_usu = $request->get('id');
-        $encuesta->pregunta = $request->get('pA');
-        $encuesta->respuesta = $req['1a'];
-        $encuesta->respuesta = $req['1b'];
-        $encuesta->respuesta = $req['1c'];
-        $encuesta->respuesta = $req['1d'];
-        $encuesta->respuesta = $req['1e'];
-        $encuesta->save();
-        }
-        return "exito";
-    }
-
+   
     /**
      * Store a newly created resource in storage.
      *  
@@ -67,7 +51,7 @@ class UsuariosController extends Controller
         {
              $usuario->save();
            $id = DB::getPdo()->lastInsertId();
-            return view('encuesta1',['id'=>$id]);
+            return view('encuestas.encuesta1',['id'=>$id]);
         }
     }
 

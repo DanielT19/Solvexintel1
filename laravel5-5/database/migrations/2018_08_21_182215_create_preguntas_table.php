@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEncuestaTable extends Migration
+class CreatePreguntasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateEncuestaTable extends Migration
      */
     public function up()
     {
-        Schema::create('encuesta', function (Blueprint $table) {
-            $table->increments('id_enc');
-            $table->string('pregunta');
-            $table->string('respuesta');
+        Schema::create('preguntas', function (Blueprint $table) {
+            $table->increments('id_preguntas');
+            $table->string('preguntas');
             $table->integer('id_usu')->unsigned();
-            $table->foreign('id_usu')->references('id_usu')->on('Usuario');
+            $table->foreign('id_usu')->references('id_usu')->on('usuario');
             $table->timestamps();
         });
     }

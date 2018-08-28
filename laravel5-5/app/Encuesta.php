@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Encuesta extends Model
 {
-	protected $table = "encuesta";
+	protected $table = "preguntas";
+
+	protected $primaryKey = 'id_preguntas';
+
 	protected $fillable = [
-		'pregunta',
-		'respuesta',
+		'preguntas',
 		'id_usu',
 		
 	];
@@ -18,5 +20,10 @@ class Encuesta extends Model
 
     return $this->hasMany('App\Usuario');
     
+	}
+
+	public function respuestas()
+	{
+		return $this->belongsTo('App\Respuestas');
 	}
 }

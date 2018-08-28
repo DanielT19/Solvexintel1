@@ -6,6 +6,7 @@ use App\Encuesta;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Usuario;
+use App\Respuestas;
 
 class EncuestaController extends Controller
 {
@@ -18,12 +19,12 @@ class EncuestaController extends Controller
 
     public function index()
     {
-        return view('encuesta');
+        
     }
 
     public function resultados()
     {
-        return view('resultados');
+       
     }
 
     /**
@@ -31,31 +32,6 @@ class EncuestaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-      public function storeuser(Request $request)
-    {
-        request()->validate([
-            'nombre' => 'required|min:2',
-            'email' => 'required|email'
-        ]);
-        $usuario = new Usuario;
-        
-        $usuario->nombre = $request->get('nombre');
-        $usuario->email = $request->get('email');
-        $email=$usuario->email;
-        $existe = Usuario::where('email',$email)->exists();
-        if($existe==$usuario->email)
-        {
-            return view('bienvenido')->with('usuario','$usuario')->withErrors(['¡Oops, el correo ya fue registrado','Si ya habias completado la encuesta una vez, no es necesarios hacerlo de nuevo']);
-        }
-        else
-        {
-            $usuario->save();
-            $id = DB::table('usuario')->lastInsertId(
-            [ 'nombre' => 'first' ]);
-            return view('encuesta',['id'=>$id]);
-        }
-        
-    }
 
 
     public function create()
@@ -69,12 +45,22 @@ class EncuestaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeP1(Request $request)
     {
         $encuesta = new Encuesta;
 
         $encuesta->pregunta = $request->get('pA');
         $encuesta->respuesta = $request->get('1a');
+        $encuesta->save();
+    }
+
+    public function storeP2(Request $request)
+    {
+        $encuesta = new Encuesta;
+
+        $encuesta->pregunta = $request->get('pA');
+        $encuesta->respuesta = $request->get('1a');
+        $encuesta->save();
     }
 
     /**

@@ -15,7 +15,7 @@ class Usuario extends Model
 	
     protected $fillable = ['nombre','email'];
 
-     protected $dates = ['deleted_at'];
+    // protected $dates = ['deleted_at'];
 
      public function usuario()
      {
