@@ -24,6 +24,7 @@
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP1')}}">
 
 					{{ csrf_field()}}
+					input id usuario
 					<input type="text" id="id" name="id" value="{{ $id }}">
 					<input type="text" name="pA" value="A" hidden>
 					<!--<input type="text" name="pb[pB]" value="B" hidden>-->
@@ -60,7 +61,7 @@
 								<td><input class="form-control" 
 									type="number" 
 									name="1a"
-									id="1a"
+									id="a"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -113,4 +114,8 @@
 							</tbody>
 							
 						</table>
+					</div>
+					<button class="btn btn-success">Siguiente	</button>
+				</form>
+			</div>
 						

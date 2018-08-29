@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Usuario;
 use App\Encuesta;
+use App\Respuestas;
 use Illuminate\Support\Facades\DB;
 
 class UsuariosController extends Controller

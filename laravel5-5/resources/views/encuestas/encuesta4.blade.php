@@ -21,31 +21,12 @@
 				<small class="text-muted">Leyenda: </small>
 			</div>
 			<div class="panel-body">
-				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP2')}}">
-
+				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP4')}}">
 					{{ csrf_field()}}
 					<input type="text" id="id" name="id" value="{{ $id }}">
-					<!--<input type="text" name="pa[pA]" value="A" hidden>-->
-					<input type="text" name="pB" value="B" hidden>
-					<!--<input type="text" name="pC" value="C" hidden>
 					<input type="text" name="pD" value="D" hidden>
-					<input type="text" name="pE" value="E" hidden>
-					<input type="text" name="pF" value="F" hidden>
-					<input type="text" name="pG" value="G" hidden>
-					<input type="text" name="pH" value="H" hidden>
-					<input type="text" name="pI" value="I" hidden>
-					<input type="text" name="pJ" value="J" hidden>
-					<input type="text" name="pK" value="K" hidden>
-					<input type="text" name="pL" value="L" hidden>
-					<input type="text" name="pM" value="M" hidden>
-					<input type="text" name="pN" value="N" hidden>
-					<input type="text" name="pO" value="O" hidden>
-					<input type="text" name="pP" value="P" hidden>
-					<input type="text" name="pQ" value="Q" hidden>
-					<input type="text" name="pR" value="R" hidden>-->
-					<div class="form-row">
-						<table class="table table-striped">
-<p><b>B. Cuando inicio un trabajo en un proyecto grupal, que es lo más importante para mí:</b></p>
+					<table class="table table-striped">
+							<p><b>D. Para mí, las tablas y gráficas en un libro o artículo son usualmente:</b></p>
 							<thead>	
 							<tr>
 								<th></th>
@@ -56,10 +37,10 @@
 							<tbody>
 								<tr>
 								<th scope="row">1</th>
-								<td>Entender los propósitos y el valor del proyecto</td>
+								<td>Mas útiles que una narrativa si son exactas.</td>
 								<td><input class="form-control" 
 									type="number" 
-									name="1b"
+									name="1d"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -67,10 +48,10 @@
 								</tr>
 								<tr>
 									<th scope="row">2</th>
-									<td>Descubrir las metas y valores de los individuos que forman parte del grupo.</td>
+									<td>Útiles, si claramente muestran los hechos importantes.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="2b"
+											name="2d"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -78,10 +59,10 @@
 								</tr>
 								<tr>
 									<th scope="row">3</th>
-									<td>Determinar cómo vamos a abordar el proyecto</td>
+									<td>Útiles, si están apoyados y explicados por la narrativa.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="3b"
+											name="3d"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -89,10 +70,10 @@
 								</tr>
 								<tr>
 									<th scope="row">4</th>
-									<td>Entender como el proyecto puede ser de beneficio para el grupo</td>
+									<td>Útiles, si generan preguntas acerca de la narrativa.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="4b"
+											name="4d"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -100,10 +81,10 @@
 								</tr>
 								<tr>
 									<th scope="row">5</th>
-									<td>Organizar y poner en marcha el proyecto.</td>
+									<td>Ni menos ni más útil que otro material.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="5b"
+											name="5d"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -111,11 +92,18 @@
 								</tr>
 							</tbody>
 						</table>
-					</div>
-					<center><button class="btn btn-primary">Acceder</button></center>
+						</div><!--Cierre del form row-->
+			</div><!--Cierre del panel body-->
+					<button class="btn btn-success btn-block">Enviar</button>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
+				
+			</div>
+			<div class="col">
+				
+			</div>
+		</div>
 @endsection
