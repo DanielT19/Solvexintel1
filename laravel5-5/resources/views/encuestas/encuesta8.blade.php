@@ -21,26 +21,27 @@
 				<small class="text-muted">Leyenda: </small>
 			</div>
 			<div class="panel-body">
-				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP4')}}">
+				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP8')}}">
 					{{ csrf_field()}}
 					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pD" value="D">
+					<input type="text" name="pH" value="H" hidden>
+					<div class="form-row">
 					<table class="table table-striped">
-							<p><b>D. Para mí, las tablas y gráficas en un libro o artículo son usualmente:</b></p>
+							<p><b>H. Cuando leo el artículo de una revista en mi tiempo libre es muy probable que sea acerca de:</b></p>
 							<thead>	
 							<tr>
-								<th></th>
-								<th></th>
-								<th></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
+								<th scope="col"></th>
 							</tr>
 							</thead>
 							<tbody>
 								<tr>
 								<th scope="row">1</th>
-								<td>Mas útiles que una narrativa si son exactas.</td>
+								<td>Como alguien resolvió un problema de tipo personal o social</td>
 								<td><input class="form-control" 
 									type="number" 
-									name="1d"
+									name="1h"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -48,10 +49,10 @@
 								</tr>
 								<tr>
 									<th scope="row">2</th>
-									<td>Útiles, si claramente muestran los hechos importantes.</td>
+									<td>Un tema controvertido de naturaleza política o social.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="2d"
+											name="2h"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -59,10 +60,10 @@
 								</tr>
 								<tr>
 									<th scope="row">3</th>
-									<td>Útiles, si están apoyados y explicados por la narrativa.</td>
+									<td>Un relato de una investigación científica o histórica.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="3d"
+											name="3h"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -70,10 +71,10 @@
 								</tr>
 								<tr>
 									<th scope="row">4</th>
-									<td>Útiles, si generan preguntas acerca de la narrativa.</td>
+									<td>Un evento o persona interesante o divertida.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="4d"
+											name="4h"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -81,17 +82,17 @@
 								</tr>
 								<tr>
 									<th scope="row">5</th>
-									<td>Ni menos ni más útil que otro material.</td>
+									<td>De un relato real sobre una experiencia interesante de alguna persona.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="5d"
+											name="5h"
 											required
 											pattern="^[0-9]+"
 											min="1"
 											max="5"></td>
 								</tr>
 							</tbody>
-						</table>
+						<hr>
 						</div><!--Cierre del form row-->
 			</div><!--Cierre del panel body-->
 					<button class="btn btn-success btn-block">Enviar</button>

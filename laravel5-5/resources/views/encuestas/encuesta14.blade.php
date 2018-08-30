@@ -21,12 +21,13 @@
 				<small class="text-muted">Leyenda: </small>
 			</div>
 			<div class="panel-body">
-				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP4')}}">
+				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP14')}}">
 					{{ csrf_field()}}
 					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pD" value="D">
-					<table class="table table-striped">
-							<p><b>D. Para mí, las tablas y gráficas en un libro o artículo son usualmente:</b></p>
+					<input type="text" name="pN" value="N" hidden>
+					<div class="form-row">
+						<table class="table table-striped">
+							<p><b>N. En general, creo que una teoría es útil cuando.</b></p>
 							<thead>	
 							<tr>
 								<th></th>
@@ -37,10 +38,10 @@
 							<tbody>
 								<tr>
 								<th scope="row">1</th>
-								<td>Mas útiles que una narrativa si son exactas.</td>
+								<td>Parece estar relacionada con otras teorías o ideas que he aprendido.</td>
 								<td><input class="form-control" 
 									type="number" 
-									name="1d"
+									name="1n"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -48,10 +49,10 @@
 								</tr>
 								<tr>
 									<th scope="row">2</th>
-									<td>Útiles, si claramente muestran los hechos importantes.</td>
+									<td>Me explica las cosas de una nueva forma.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="2d"
+											name="2n"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -59,10 +60,10 @@
 								</tr>
 								<tr>
 									<th scope="row">3</th>
-									<td>Útiles, si están apoyados y explicados por la narrativa.</td>
+									<td>Puede explicar sistemáticamente una cantidad de situaciones relacionadas.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="3d"
+											name="3n"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -70,10 +71,10 @@
 								</tr>
 								<tr>
 									<th scope="row">4</th>
-									<td>Útiles, si generan preguntas acerca de la narrativa.</td>
+									<td>Sirve para clarificar mis propias observaciones experiencia.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="4d"
+											name="4n"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -81,17 +82,17 @@
 								</tr>
 								<tr>
 									<th scope="row">5</th>
-									<td>Ni menos ni más útil que otro material.</td>
+									<td>Tiene una aplicación práctica y concreta.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="5d"
+											name="5n"
 											required
 											pattern="^[0-9]+"
 											min="1"
 											max="5"></td>
 								</tr>
 							</tbody>
-						</table>
+						<hr>
 						</div><!--Cierre del form row-->
 			</div><!--Cierre del panel body-->
 					<button class="btn btn-success btn-block">Enviar</button>

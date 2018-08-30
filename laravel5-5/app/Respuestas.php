@@ -23,7 +23,7 @@ class Respuestas extends Model
     public function encuesta()
 	{
 
-    return $this->hasMany('App\Encuesta');
+    return $this->belongsTo('App\Encuesta');
     
 	}
 }

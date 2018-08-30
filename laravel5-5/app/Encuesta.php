@@ -18,12 +18,12 @@ class Encuesta extends Model
 	public function usuarios()
 	{
 
-    return $this->hasMany('App\Usuario');
+    return $this->belonsTo('App\Usuario');
     
 	}
 
 	public function respuestas()
 	{
-		return $this->belongsTo('App\Respuestas');
+		return $this->hasMany('App\Respuestas');
 	}
 }

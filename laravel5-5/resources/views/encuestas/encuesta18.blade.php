@@ -21,12 +21,13 @@
 				<small class="text-muted">Leyenda: </small>
 			</div>
 			<div class="panel-body">
-				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP4')}}">
+				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP18')}}">
 					{{ csrf_field()}}
 					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pD" value="D">
-					<table class="table table-striped">
-							<p><b>D. Para mí, las tablas y gráficas en un libro o artículo son usualmente:</b></p>
+					<input type="text" name="pR" value="R" hidden>
+					<div class="form-row">
+						<table class="table table-striped">
+							<p><b>R. Hablando en general, estoy más inclinado a:</b></p>
 							<thead>	
 							<tr>
 								<th></th>
@@ -37,10 +38,10 @@
 							<tbody>
 								<tr>
 								<th scope="row">1</th>
-								<td>Mas útiles que una narrativa si son exactas.</td>
+								<td>Encontrar métodos existentes que funcionan, y usarlos lo mejor posible.</td>
 								<td><input class="form-control" 
 									type="number" 
-									name="1d"
+									name="1r"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -48,10 +49,10 @@
 								</tr>
 								<tr>
 									<th scope="row">2</th>
-									<td>Útiles, si claramente muestran los hechos importantes.</td>
+									<td>Especular sobre cómo métodos dispares podrían funcionar juntos.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="2d"
+											name="2r"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -59,10 +60,10 @@
 								</tr>
 								<tr>
 									<th scope="row">3</th>
-									<td>Útiles, si están apoyados y explicados por la narrativa.</td>
+									<td>Descubrir nuevos y mejores métodos.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="3d"
+											name="3r"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -70,10 +71,10 @@
 								</tr>
 								<tr>
 									<th scope="row">4</th>
-									<td>Útiles, si generan preguntas acerca de la narrativa.</td>
+									<td>Encontrar maneras de hacer que los métodos existentes funcionen de una nueva y mejor forma.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="4d"
+											name="4r"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -81,10 +82,10 @@
 								</tr>
 								<tr>
 									<th scope="row">5</th>
-									<td>Ni menos ni más útil que otro material.</td>
+									<td>Averiguar cómo deberían funcionar los métodos existentes.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="5d"
+											name="5r"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -92,6 +93,9 @@
 								</tr>
 							</tbody>
 						</table>
+
+						</table>
+						<hr>
 						</div><!--Cierre del form row-->
 			</div><!--Cierre del panel body-->
 					<button class="btn btn-success btn-block">Enviar</button>

@@ -21,12 +21,13 @@
 				<small class="text-muted">Leyenda: </small>
 			</div>
 			<div class="panel-body">
-				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP4')}}">
+				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP6')}}">
 					{{ csrf_field()}}
 					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pD" value="D">
+					<input type="text" name="pF" value="F" hidden>
+					<div class="form-row">
 					<table class="table table-striped">
-							<p><b>D. Para mí, las tablas y gráficas en un libro o artículo son usualmente:</b></p>
+							<p><b>F. Si fuera a obtener información de los vecinos sobre una preocupación comunitaria preferiría.</b></p>
 							<thead>	
 							<tr>
 								<th></th>
@@ -37,10 +38,10 @@
 							<tbody>
 								<tr>
 								<th scope="row">1</th>
-								<td>Mas útiles que una narrativa si son exactas.</td>
+								<td>Reunirme con ellos individualmente a hacer preguntas especificas..</td>
 								<td><input class="form-control" 
 									type="number" 
-									name="1d"
+									name="1f"
 									required
 									pattern="[0-9]"
 									min="1"
@@ -48,10 +49,10 @@
 								</tr>
 								<tr>
 									<th scope="row">2</th>
-									<td>Útiles, si claramente muestran los hechos importantes.</td>
+									<td>Tener una reunión abierta con todos y pedirles que externen sus observaciones.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="2d"
+											name="2f"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -59,10 +60,10 @@
 								</tr>
 								<tr>
 									<th scope="row">3</th>
-									<td>Útiles, si están apoyados y explicados por la narrativa.</td>
+									<td>Entrevistarlos en pequeños grupos y hacerles preguntas generales.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="3d"
+											name="3f"
 											required
 											pattern="[0-9]"
 											min="1"
@@ -70,10 +71,10 @@
 								</tr>
 								<tr>
 									<th scope="row">4</th>
-									<td>Útiles, si generan preguntas acerca de la narrativa.</td>
+									<td>Reunirme de manera informal con personas clave para obtener sus ideas.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="4d"
+											name="4f"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -81,10 +82,10 @@
 								</tr>
 								<tr>
 									<th scope="row">5</th>
-									<td>Ni menos ni más útil que otro material.</td>
+									<td>Solicitar que me entreguen toda la información relevante en su posesión.</td>
 									<td><input type="number"
 											class="form-control" 
-											name="5d"
+											name="5f"
 											required
 											pattern="^[0-9]+"
 											min="1"
@@ -92,6 +93,7 @@
 								</tr>
 							</tbody>
 						</table>
+						<hr>
 						</div><!--Cierre del form row-->
 			</div><!--Cierre del panel body-->
 					<button class="btn btn-success btn-block">Enviar</button>

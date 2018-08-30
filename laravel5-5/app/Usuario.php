@@ -19,6 +19,6 @@ class Usuario extends Model
 
      public function usuario()
      {
-     	return $this->belongsTo('App\Encuesta');
+     	return $this->hasMany('App\Encuesta');
      }
 }
