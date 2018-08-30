@@ -2,7 +2,7 @@
 
 
 Route::get('/', 'UsuariosController@index');
-
+Route::get('resultados','UsuariosController@resultado');
 Route::post('/','UsuariosController@store');
 Route::post('/encuesta1','EncuestaController@storeP1');
 Route::post('/encuesta2','EncuestaController@storeP2');
@@ -22,5 +22,7 @@ Route::post('/encuesta15','EncuestaController@storeP15');
 Route::post('/encuesta16','EncuestaController@storeP16');
 Route::post('/encuesta17','EncuestaController@storeP17');
 Route::post('/encuesta18','EncuestaController@storeP18');
+
+
 
 Route::resource('encuesta','UsuariosController');

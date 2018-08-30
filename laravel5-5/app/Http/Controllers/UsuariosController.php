@@ -20,6 +20,34 @@ class UsuariosController extends Controller
         return view('bienvenido');
     }
 
+    public function resultado()
+    {
+        $usuario = Usuario::paginate(10);
+
+        $pregunta = DB::table('preguntas')->get();
+        $respuesta = DB::table('respuestas')->get();
+
+        $s1 = DB::table('preguntas as p')
+        ->join('respuestas as r', function($on){
+            $on->on('p.id_preguntas','=','r.id_preguntas');
+        })
+        ->join('usuario as u', function($join){
+            $join->on('p.id_usu', '=', 'u.id_usu');
+        })
+        ->select('u.id_usu','u.email','p.id_preguntas','p.preguntas','r.id_respuestas','r.respuesta1','r.respuesta2','r.respuesta3','r.respuesta4','r.respuesta5')
+        ->where('u.id_usu','=',"1")
+        ->get();
+
+        //  return $s1;
+
+        $s = 0;
+        $i = 0;
+        $p = 0;
+        $r = 0;
+
+        return view('usuarios.resultado',['usuario' => $usuario,'pregunta'=>$pregunta,'s1'=>$s1]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -65,6 +93,7 @@ class UsuariosController extends Controller
     public function show(Request $request)
     {
         $usuario = Usuario::paginate(10);
+
         return view('usuarios.resultado',['usuario' => $usuario]);
     }
 

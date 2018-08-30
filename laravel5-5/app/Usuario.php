@@ -17,7 +17,7 @@ class Usuario extends Model
 
     // protected $dates = ['deleted_at'];
 
-     public function usuario()
+     public function encuesta()
      {
      	return $this->hasMany('App\Encuesta');
      }
