@@ -78,12 +78,24 @@ class UsuariosController extends Controller
        // ->where('p.preguntas','=','A')
         ->select(DB::raw('SUM(respuesta5) as s3')) 
         ->first();   
+        //respuesta4
+        $s4 = DB::table('preguntas as p')
+        ->join('respuestas as r', function($on){
+            $on->on('p.id_preguntas','=','r.id_preguntas');
+        })
+        ->join('usuario as u', function($join){
+            $join->on('p.id_usu', '=', 'u.id_usu');
+        })
+        
+        ->where('u.id_usu','=',"1")
+        ->whereIn('p.preguntas',['D','J','P'])
+       // ->where('p.preguntas','=','A')
+        ->select(DB::raw('SUM(respuesta4) as s4')) 
+        ->first();   
 
-        $s1array = array($s1,$s2,$s3);
-            list($a[0],$a[1],$a[2]) = $s1array;
-
-    
-       return array_sum($a);
+        $arr = array($s1,$s2,$s3,$s4);
+        //    list($a[0],$a[1],$a[2],$a[3]) = $s;
+       return $arr;
         //  return $s1;
 
         $s = 0;
