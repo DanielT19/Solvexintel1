@@ -37,7 +37,53 @@ class UsuariosController extends Controller
         ->select('u.id_usu','u.email','p.id_preguntas','p.preguntas','r.id_respuestas','r.respuesta1','r.respuesta2','r.respuesta3','r.respuesta4','r.respuesta5')
         ->where('u.id_usu','=',"1")
         ->get();
+        //Se consulta cada respuesta con funcion al ID del usuario
+        $s1 = DB::table('preguntas as p')
+        ->join('respuestas as r', function($on){
+            $on->on('p.id_preguntas','=','r.id_preguntas');
+        })
+        ->join('usuario as u', function($join){
+            $join->on('p.id_usu', '=', 'u.id_usu');
+        })
+        ->select(DB::raw('SUM(respuesta1) as s1'))
+        ->where('u.id_usu','=',"1")
+        ->whereIn('p.preguntas',['A','G','M'])
+        ->first();
+        //respuesta 2
 
+        $s2 = DB::table('preguntas as p')
+        ->join('respuestas as r', function($on){
+            $on->on('p.id_preguntas','=','r.id_preguntas');
+        })
+        ->join('usuario as u', function($join){
+            $join->on('p.id_usu', '=', 'u.id_usu');
+        })
+        
+        ->where('u.id_usu','=',"1")
+        ->whereIn('p.preguntas',['B','H','N'])
+       // ->where('p.preguntas','=','A')
+        ->select(DB::raw('SUM(respuesta2) as s2')) 
+        ->first();   
+        //repuesta3
+         $s3 = DB::table('preguntas as p')
+        ->join('respuestas as r', function($on){
+            $on->on('p.id_preguntas','=','r.id_preguntas');
+        })
+        ->join('usuario as u', function($join){
+            $join->on('p.id_usu', '=', 'u.id_usu');
+        })
+        
+        ->where('u.id_usu','=',"1")
+        ->whereIn('p.preguntas',['C','I','O'])
+       // ->where('p.preguntas','=','A')
+        ->select(DB::raw('SUM(respuesta5) as s3')) 
+        ->first();   
+
+        $s1array = array($s1,$s2,$s3);
+            list($a[0],$a[1],$a[2]) = $s1array;
+
+    
+       return array_sum($a);
         //  return $s1;
 
         $s = 0;
