@@ -23,10 +23,9 @@ class UsuariosController extends Controller
     public function resultado()
     {
         $usuario = Usuario::paginate(10);
-
+       // $id = Usuario::findOrfail($id->id_usu);
         $pregunta = DB::table('preguntas')->get();
         $respuesta = DB::table('respuestas')->get();
-
         $s1 = DB::table('preguntas as p')
         ->join('respuestas as r', function($on){
             $on->on('p.id_preguntas','=','r.id_preguntas');
@@ -38,16 +37,47 @@ class UsuariosController extends Controller
         ->where('u.id_usu','=',"1")
         ->get();
 
-        //  return $s1;
 
-        $s = 0;
-        $i = 0;
-        $p = 0;
-        $r = 0;
+       
 
         return view('usuarios.resultado',['usuario' => $usuario,'pregunta'=>$pregunta,'s1'=>$s1]);
     }
 
+    public function verRes($id)
+    {
+        $usuario = Usuario::findOrfail($id);
+        $pregunta = DB::table('preguntas')->get();
+        $respuesta = DB::table('respuestas')->get();
+        $todo = DB::table('preguntas as p')
+        ->join('respuestas as r', function($on){
+            $on->on('p.id_preguntas','=','r.id_preguntas');
+        })
+        ->join('usuario as u', function($join){
+            $join->on('p.id_usu', '=', 'u.id_usu');
+        })
+        ->select('u.id_usu','u.email','p.id_preguntas','p.preguntas','r.id_respuestas','r.respuesta1','r.respuesta2','r.respuesta3','r.respuesta4','r.respuesta5')
+        ->where('u.id_usu','=',$id)
+        ->get();
+
+        /*$s1 = DB::table('preguntas as p')
+        ->join('respuestas as r', function($on){
+            $on->on('p.id_preguntas','=','r.id_preguntas');
+        })
+        ->select('p.id_preguntas','p.preguntas')*/
+
+        $resultados = collect();
+
+        foreach($respuestas->id_preguntas as $respuesta) {
+             $respuesta->id_respuesta = array_sum(array_only($respuesta->id_respuesta, ['respuesta1', 'respuesta2', 'respuesta3', 'respuesta4', 'respuesta5']));
+             $resultados->push($respuesta);
+        }
+        return $resultados;
+        $s = 0;
+        $i = 0;
+        $p = 0;
+        $r = 0;
+        return view('usuarios.resultadoxusuario',['usuario' => $usuario,'pregunta'=>$pregunta,'s1'=>$s1]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -92,10 +122,7 @@ class UsuariosController extends Controller
      */
     public function show(Request $request)
     {
-        $usuario = Usuario::paginate(10);
-
-        return view('usuarios.resultado',['usuario' => $usuario]);
-    }
+        }
 
     /**
      * Show the form for editing the specified resource.

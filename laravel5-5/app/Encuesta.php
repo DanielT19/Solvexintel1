@@ -15,15 +15,15 @@ class Encuesta extends Model
 		'id_usu',
 		
 	];
-	public function usuarios()
+	public function usuario()
 	{
 
     return $this->belonsTo('App\Usuario');
     
 	}
 
-	public function respuestas()
+	public function respuesta()
 	{
-		return $this->hasMany('App\Respuestas');
+		return $this->hasOne('App\Respuestas');
 	}
 }

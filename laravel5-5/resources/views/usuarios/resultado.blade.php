@@ -3,7 +3,8 @@
 
 <div class="row">
 	<div class="col-md-9 col-md-offset-1">
-		<table class="table">
+
+		<table id="buscarusu" class="table display"  width="100%"	>
 			<thead>
 				<tr>
 					<th>#</th>
@@ -21,7 +22,7 @@
 				<td>{{ $usu->nombre }}</td>
 				<td>{{ $usu->email }}</td>
 				<td>{{ $usu->created_at}}</td>
-				<td><a href="#"><button class="btn btn-success">Ver</button></a></td>
+				<td><a href="{{ URL::action('UsuariosController@verRes', $usu->id_usu) }}"><button class="btn btn-success">Ver</button></a></td>
 			</tbody>
 			
 			@endforeach
@@ -34,5 +35,6 @@
 </div>
 
 {!! $usuario->render() !!}
+
 
 @endsection

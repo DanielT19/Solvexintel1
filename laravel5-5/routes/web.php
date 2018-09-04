@@ -22,7 +22,8 @@ Route::post('/encuesta15','EncuestaController@storeP15');
 Route::post('/encuesta16','EncuestaController@storeP16');
 Route::post('/encuesta17','EncuestaController@storeP17');
 Route::post('/encuesta18','EncuestaController@storeP18');
-
+Route::post('/ResultadosUsuario/{id}','UsuariosController@verRes');
+Route::get('/ResultadosUsuario/{id}','UsuariosController@verRes');
 
 
 Route::resource('encuesta','UsuariosController');
