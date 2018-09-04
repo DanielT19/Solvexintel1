@@ -48,6 +48,7 @@ class EncuestaController extends Controller
      */
     public function storeP1(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pA');
         $encuesta->id_usu = $request->get('id');
@@ -67,6 +68,7 @@ class EncuestaController extends Controller
 
     public function storeP2(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pB');
         $encuesta->id_usu = $request->get('id');
@@ -85,6 +87,7 @@ class EncuestaController extends Controller
 
     public function storeP3(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pC');
         $encuesta->id_usu = $request->get('id');
@@ -103,6 +106,7 @@ class EncuestaController extends Controller
 
     public function storeP4(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = Input::get('pD');
         $encuesta->id_usu = $request->get('id');
@@ -121,6 +125,7 @@ class EncuestaController extends Controller
 
     public function storeP5(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pE');
         $encuesta->id_usu = $request->get('id');
@@ -139,6 +144,7 @@ class EncuestaController extends Controller
 
     public function storeP6(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pF');
         $encuesta->id_usu = $request->get('id');
@@ -157,6 +163,7 @@ class EncuestaController extends Controller
 
     public function storeP7(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pG');
         $encuesta->id_usu = $request->get('id');
@@ -175,6 +182,7 @@ class EncuestaController extends Controller
 
     public function storeP8(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pH');
         $encuesta->id_usu = $request->get('id');
@@ -193,6 +201,7 @@ class EncuestaController extends Controller
 
     public function storeP9(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pI');
         $encuesta->id_usu = $request->get('id');
@@ -211,6 +220,7 @@ class EncuestaController extends Controller
 
     public function storeP10(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pJ');
         $encuesta->id_usu = $request->get('id');
@@ -229,6 +239,7 @@ class EncuestaController extends Controller
 
      public function storeP11(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pK');
         $encuesta->id_usu = $request->get('id');
@@ -247,6 +258,7 @@ class EncuestaController extends Controller
 
      public function storeP12(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pL');
         $encuesta->id_usu = $request->get('id');
@@ -265,6 +277,7 @@ class EncuestaController extends Controller
 
      public function storeP13(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pM');
         $encuesta->id_usu = $request->get('id');
@@ -283,6 +296,7 @@ class EncuestaController extends Controller
 
      public function storeP14(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pN');
         $encuesta->id_usu = $request->get('id');
@@ -301,6 +315,7 @@ class EncuestaController extends Controller
 
      public function storeP15(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pO');
         $encuesta->id_usu = $request->get('id');
@@ -319,6 +334,7 @@ class EncuestaController extends Controller
 
      public function storeP16(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pP');
         $encuesta->id_usu = $request->get('id');
@@ -337,6 +353,7 @@ class EncuestaController extends Controller
 
      public function storeP17(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pQ');
         $encuesta->id_usu = $request->get('id');
@@ -355,6 +372,7 @@ class EncuestaController extends Controller
 
      public function storeP18(Request $request)
     {
+         if(!$request->ajax()) return redirect('/');
         $encuesta = new Encuesta;
         $encuesta->preguntas = $request->get('pR');
         $encuesta->id_usu = $request->get('id');

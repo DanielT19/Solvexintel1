@@ -1,7 +1,7 @@
-<?php
+ <?php
 
 
-Route::get('/', 'UsuariosController@index');
+Route::get('/', 'UsuariosController@index')->name('inicio');
 Route::get('resultados','UsuariosController@resultado');
 Route::post('/','UsuariosController@store');
 Route::post('/encuesta1','EncuestaController@storeP1');

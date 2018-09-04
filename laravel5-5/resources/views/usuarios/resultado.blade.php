@@ -9,26 +9,22 @@
 				<tr>
 					<th>#</th>
 					<th>Nombre</th>
-					<th>Email</th>
-					<th>Creado el:</th>
 					<th>Resultados</th>
-					
 				</tr>
 			</thead>
 			@foreach($usuario as $usu)
-			
+		
 			<tbody>
 				<th scope="row">{{ $usu->id_usu }}</th>
 				<td>{{ $usu->nombre }}</td>
-				<td>{{ $usu->email }}</td>
-				<td>{{ $usu->created_at}}</td>
-				<td><a href="{{ URL::action('UsuariosController@verRes', $usu->id_usu) }}"><button class="btn btn-success">Ver</button></a></td>
+				<td><a href="{{ URL::action('UsuariosController@verRes', $usu->id_usu) }}"><button class="btn btn-success">Ver Detalles</button></a></td>
+				
 			</tbody>
 			
 			@endforeach
 		</table>
 		<br><br><br>
-		<a href="{{URL::action('UsuariosController@index')}}" 
+		<a href="{{ route('inicio') }}" 
 		<button class="btn btn-danger">Regresar</button>
 	</a>
 	</div>
