@@ -25,8 +25,8 @@
 
 					{{ csrf_field()}}
 					input id usuario
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pA" value="A" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pA" value="A" hidden>
 					<!--<input type="text" name="pb[pB]" value="B" hidden>-->
 					<!--<input type="text" name="pC" value="C" hidden>
 					<input type="text" name="pD" value="D" hidden>

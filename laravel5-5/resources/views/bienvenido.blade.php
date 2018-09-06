@@ -11,7 +11,10 @@
         </ul>
     </div><br />
 @endif
+	
 
+    <!----------------------------------------->
+	<!-- Bootstrap -->
 	<div class="container">
 		<div class="row">
 			<div class="col-5-md-6">
@@ -20,12 +23,12 @@
 			<div class="col-9">
 				<div class="container">
 						
-					<nav class=" navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+					<nav class=" navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
 						<a class="navbar-brand" href="">
 							<img src="/images/ic_svl_iconapp.png" width="30" height="30" alt="">
 						</a>Solvexintel
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ">
       <li class="nav-item active">
         <a class="nav-link" href="{{URL::action('UsuariosController@index') }}">Inicio<span class="sr-only">(current)</span></a>
       </li>
@@ -92,4 +95,19 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- Jquery-2.2.4 JS -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap-4 Beta JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="js/plugins.js"></script>
+    <!-- Slick Slider Js-->
+    <script src="js/slick.min.js"></script>
+    <!-- Footer Reveal JS -->
+    <script src="js/footer-reveal.min.js"></script>
+    <!-- Active JS -->
+    <script src="js/active.js"></script>
 @endsection

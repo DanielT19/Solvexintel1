@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP3')}}">
 					{{ csrf_field()}}
-					<input type="text" name="pC" value="C" hidden>
-					<input type="text" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pC" value="C" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
 					<table class="table table-striped">
 							<p><b>C. En términos generales, absorbo mejor nuevas ideas al:</b></p>
 							<thead>	

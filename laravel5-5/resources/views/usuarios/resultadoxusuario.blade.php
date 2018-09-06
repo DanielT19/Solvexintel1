@@ -27,50 +27,50 @@
 				<td>{{ $usu->email }}</td>
 				<td>{{ $usu->created_at}}</td>
 				<td>@if($s>60)
-					<span class="label label-success">{!! $s !!}</span>
+					<span class="label label-success">{{ $s }}</span>
 					@elseif($s<60)
-					<span class="label label-warning">{!! $s !!}</span>
+					<span class="label label-warning">{{ $s }}</span>
 					@else
-					<span class="label label-default">{!! $s !!}</span>
+					<span class="label label-default">{{ $s }}</span>
 					@endif
 				</td>
 				<td>
 					@if($i>60)
-					<span class="label label-success">{!! $i !!}</span>
+					<span class="label label-success">{{ $i }}</span>
 					@elseif($i<60)
-					<span class="label label-warning">{!! $i !!}</span>
+					<span class="label label-warning">{{ $i }}</span>
 					@else
-					<span class="label label-default">{!! $i !!}</span>
+					<span class="label label-default">{{ $i }}</span>
 					@endif
 				</td>
 				<td>
 					@if($p>60)
-					<span class="label label-success">{!! $p !!}</span>
+					<span class="label label-success">{{ $p }}</span>
 					@elseif($p<60)
-					<span class="label label-warning">{!! $p !!}</span>
+					<span class="label label-warning">{{ $p }}</span>
 					@else
-					<span class="label label-default">{!! $p !!}</span>
+					<span class="label label-default">{{ $p }}</span>
 					@endif
 				</td>
 				<td>
 					@if($a>60)
-					<span class="label label-success">{!! $a !!}</span>
+					<span class="label label-success">{{ $a }}</span>
 					@elseif($a<60)
-					<span class="label label-warning">{!! $a !!}</span>
+					<span class="label label-warning">{{ $a }}</span>
 					@else
-					<span class="label label-default">{!! $a !!}</span>
+					<span class="label label-default">{{ $a }}</span>
 					@endif
 				</td>
 				<td>
 					@if($r>60)
-					<span class="label label-success">{!! $r !!}</span>
+					<span class="label label-success">{{ $r }}</span>
 					@elseif($r<60)
-					<span class="label label-warning">{!! $r !!}</span>
+					<span class="label label-warning">{{ $r }}</span>
 					@else
-					<span class="label label-default">{!! $r !!}</span>
+					<span class="label label-default">{{ $r }}</span>
 					@endif
 				</td>
-				<td>{!! $total !!}</td>
+				<td>{{  $total }}</td>
 
 			</tbody>
 			@endforeach

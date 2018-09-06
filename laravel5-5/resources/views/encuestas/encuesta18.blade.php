@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP18')}}">
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pR" value="R" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pR" value="R" hidden>
 					<div class="form-row">
 						<table class="table table-striped">
 							<p><b>R. Hablando en general, estoy más inclinado a:</b></p>

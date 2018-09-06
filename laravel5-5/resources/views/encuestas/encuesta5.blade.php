@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP5')}}">
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pE" value="E" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pE" value="E" hidden>
 					<table class="table table-striped">
 						<div class="form-row">
 							<p><b>E. Si me fuera solicitado realizar un proyecto de investigación, probablemente comenzaría por:</b></p>

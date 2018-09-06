@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP16')}}">
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pP" value="P" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pP" value="P" hidden>
 					<div class="form-row">
 						<table class="table table-striped">
 							<p><b>P. Si leo un libro fuera de mi campo profesional, es muy probable que lo haga debido a:</b></p>

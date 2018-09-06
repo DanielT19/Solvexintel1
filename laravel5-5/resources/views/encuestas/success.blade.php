@@ -21,7 +21,7 @@
 			</div>
 			<div class="panel-body">
 				<h2 class="panel-body">Haz Completado el Test</h2>
-				<img src="/images/success.png" alt="">
+				<img src="/images/success.png" width="600" height="800" alt="">
 				<a href="{{URL::action('UsuariosController@index') }}"><button class="btn btn-success">Terminar</button></a>
 			</div>
 		</div>

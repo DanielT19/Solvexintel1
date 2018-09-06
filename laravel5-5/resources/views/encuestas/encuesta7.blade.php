@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP7')}}">
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pG" value="G" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pG" value="G" hidden>
 					<div class="form-row">
 					<table class="table table-striped">
 							<p><b>G. Tengo a bien creer que algo es verdad, solo si ello:</b></p>

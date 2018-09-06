@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP14')}}">
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pN" value="N" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pN" value="N" hidden>
 					<div class="form-row">
 						<table class="table table-striped">
 							<p><b>N. En general, creo que una teoría es útil cuando.</b></p>

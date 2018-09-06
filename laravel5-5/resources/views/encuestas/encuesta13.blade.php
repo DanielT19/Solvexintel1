@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP13')}}">
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pM" value="M" hidden>
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pM" value="M" hidden>
 					<div class="form-row">
 						<table class="table table-striped">
 							<p><b>M. Las personas cuyas habilidades respeto más, probablemente son:</b></p>

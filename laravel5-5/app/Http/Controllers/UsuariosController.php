@@ -34,7 +34,7 @@ class UsuariosController extends Controller
 
     public function verRes(Request $request,$id)
     {
-        if(!$request->ajax()) return redirect('/');
+       // if(!$request->ajax()) return redirect('/');
          $usuario = Usuario::paginate(10);
          $usuario = Usuario::find($id);
          $usuario = DB::table('usuario')
@@ -544,7 +544,7 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-         if(!$request->ajax()) return redirect('/');
+      //   if(!$request->ajax()) return redirect('/');
          request()->validate([
             'nombre' => 'required|min:2',
             'email' => 'required|email'

@@ -24,25 +24,8 @@
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP2')}}">
 
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<!--<input type="text" name="pa[pA]" value="A" hidden>-->
-					<input type="text" name="pB" value="B" hidden>
-					<!--<input type="text" name="pC" value="C" hidden>
-					<input type="text" name="pD" value="D" hidden>
-					<input type="text" name="pE" value="E" hidden>
-					<input type="text" name="pF" value="F" hidden>
-					<input type="text" name="pG" value="G" hidden>
-					<input type="text" name="pH" value="H" hidden>
-					<input type="text" name="pI" value="I" hidden>
-					<input type="text" name="pJ" value="J" hidden>
-					<input type="text" name="pK" value="K" hidden>
-					<input type="text" name="pL" value="L" hidden>
-					<input type="text" name="pM" value="M" hidden>
-					<input type="text" name="pN" value="N" hidden>
-					<input type="text" name="pO" value="O" hidden>
-					<input type="text" name="pP" value="P" hidden>
-					<input type="text" name="pQ" value="Q" hidden>
-					<input type="text" name="pR" value="R" hidden>-->
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pB" value="B" hidden>
 					<div class="form-row">
 						<table class="table table-striped">
 <p><b>B. Cuando inicio un trabajo en un proyecto grupal, que es lo más importante para mí:</b></p>

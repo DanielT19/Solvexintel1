@@ -23,8 +23,8 @@
 			<div class="panel-body">
 				<form class="form-inline" method="POST" action="{{URL::action('EncuestaController@storeP4')}}">
 					{{ csrf_field()}}
-					<input type="text" id="id" name="id" value="{{ $id }}">
-					<input type="text" name="pD" value="D">
+					<input type="hidden" id="id" name="id" value="{{ $id }}">
+					<input type="hidden" name="pD" value="D">
 					<table class="table table-striped">
 							<p><b>D. Para mí, las tablas y gráficas en un libro o artículo son usualmente:</b></p>
 							<thead>	
